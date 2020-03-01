@@ -1,4 +1,7 @@
 class Pessoa:
+    # atributo de classe ou default
+    olhos = 2
+
     def __init__(self, *filhos, nome=None, idade=58):
         self.idade = idade
         self.nome = nome
@@ -22,5 +25,12 @@ if __name__ == '__main__':
 
     eduardo.sobrenome = 'Lucas'
     del eduardo.sobrenome
+    eduardo.olhos = 1
+    del eduardo.olhos
     print(eduardo.__dict__)
     print(aline.__dict__)
+
+    print(f'Qtd. de olhos: {Pessoa.olhos}')
+    print(f'Nome: {eduardo.nome} Qtd. de olhos: {eduardo.olhos}')
+    print(f'Nome: {aline.nome} Qtd. de olhos: {aline.olhos}')
+    print(id(Pessoa.olhos), id(eduardo.olhos), id(aline.olhos))
